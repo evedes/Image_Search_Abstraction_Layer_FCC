@@ -1,7 +1,7 @@
 # Image Search Abstraction Layer
 -----------------------------------------------------------------------------------
 ## [Free Code Camp](http://www.freecodecamp.com) Back End Certification
-### API Project n.04 - Image Search Abstraction Layer
+### API Project 04 - Image Search Abstraction Layer
 -----------------------------------------------------------------------------------
 
 
@@ -9,7 +9,7 @@
 
 -----------------------------------------------------------------------------------
 __Technologies used__:
-Node, Express, MongoDB, Javascript, HTML, CSS and Bootstrap
+Node, Express, MongoDB, Mongoose, Javascript, HTML, CSS and Bootstrap
 Developed and Hosted in [glitch.com](https://www.glitch.com)
 
 
