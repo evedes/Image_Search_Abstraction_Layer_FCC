@@ -4,9 +4,10 @@
   "description": "fcc back end cert api project image search abstraction layer free code camp",
   "main": "app.js",
   "dependencies": {
+    "dotenv": "^4.0.0",
     "express": "^4.15.3",
-    "mongodb": "^2.2.28",
-    "mongoose": "^4.10.6"
+    "mongodb": "^2.2.29",
+    "mongoose": "^4.10.7"
   },
   "devDependencies": {
     "nodemon": "^1.11.0"
