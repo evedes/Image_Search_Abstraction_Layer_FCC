@@ -1,7 +1,6 @@
 // Express and other Requirements
 const express = require('express')
 const app = express()
-const path = require('path')
 
 // Const and Var Definition
 const port = process.env.PORT | 8080;
