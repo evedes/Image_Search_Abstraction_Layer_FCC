@@ -11,12 +11,12 @@ router.use('/', express.static(path.join(__dirname,'../public')))
 
 router.get('/s/:query', (req,res)=>{
     query = req.params.query
-    url = 'https://pixabay.com/api/?+key=' + process.env.API_KEY +'&q=' + query + '&image_type=photo'
+    url = 'https://pixabay.com/api/?key='+process.env.API_KEY+'&q='+ query +'&image_type=photo'
     console.log(url)
-    let result = getJSON(url, function(data){
-        return data })
+    getJSON(url, function(data){
+       res.json(data);
+    })  
 
-    res.json(result)
        
 })
 
