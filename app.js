@@ -22,12 +22,6 @@ db.once('open', ()=>{
     console.log('\nHey guys! We\'re connected!\n')
 })
 
-
-
-
-
-
-
 // app use forwarded to routes.js file
 app.use('/', route)
 

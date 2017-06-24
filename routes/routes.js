@@ -1,13 +1,7 @@
 const express = require('express')
 const path = require('path')
-var pixabay = require('pixabayjs')
-var router = express.Router()
-
-//Authenticate the client to make Pixabay Requests
-pixabay.authenticate(process.env.API_USER, process.env.API_KEY)
-//Set default query parameters to make with every request
-pixabay.defaults = {safesearch: true}
-
+const router = express.Router()
+const getJSON = require('simple-get-json')
 
 const dotenv = require('dotenv')
 dotenv.load()
@@ -16,24 +10,17 @@ dotenv.load()
 router.use('/', express.static(path.join(__dirname,'../public')))
 
 router.get('/s/:query', (req,res)=>{
-   
-       let query = req.params.query
-       let search = query
-       let options = {editors_choice: true}
+    query = req.params.query
+    url = 'https://pixabay.com/api/?+key=' + process.env.API_KEY +'&q=' + query + '&image_type=photo'
+    console.log(url)
+    let result = getJSON(url, function(data){
+        return data })
 
-       let onSuccess = (response)=>{
-           console.log('success')
-           return response
-       }
-
-       let onFailure = (response)=>{
-           console.log('failure')
-           return response
-       }
-
-       let resultList = pixabay.resultList(search, options, onSuccess, onFailure)
-       res.json(resultList)
+    res.json(result)
+       
 })
+
+
 
 module.exports = router
 
