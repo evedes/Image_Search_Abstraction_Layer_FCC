@@ -35,5 +35,11 @@ NOTE: for each project, you should create a new GitHub repository and a new Glit
 3. I can get a list of the most recently submitted search strings.
 
 ------------------------------------------------------------------------------------
+#### NOTES: 
+
+1. I've changed a little bit of the user stories. Started using Google CSE but due to the number of requests per day limitation I've chosen [Pixabay.com](https://pixabay.com/) site to use for this project. I've configured the API and got these three variables: PageUrl, ImageUrl and the Number of Downloads (changed the Alt Text for the Number of Downloads)
+
+2. You can paginate thru the results by adding /offset=10 to the URL
+
 
 Copyright &copy; 2017 | EVEDES | MIT License
