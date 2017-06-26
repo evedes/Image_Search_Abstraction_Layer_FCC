@@ -1,18 +1,13 @@
 // Express and other Requirements
 const express = require('express')
 const app = express()
-
-// Const and Var Definition
 const port = process.env.PORT | 8080;
 const route = require('./routes/routes.js')
-
+const mongoose = require('mongoose')
 // .env var definitions
 const dotenv = require('dotenv')
 dotenv.load()
 
-// Database Requirements
-const mongoose = require('mongoose')
-var urlToShorten = require('./db/connection.js')
 
 //Database Connection
 mongoose.connect('mongodb://' + process.env.DB_USER +':' + process.env.DB_PASS + process.env.DB_HOST)
@@ -22,7 +17,7 @@ db.once('open', ()=>{
     console.log('\nHey guys! We\'re connected!\n')
 })
 
-// app use forwarded to routes.js file
+// use routes.js file for routing
 app.use('/', route)
 
 
