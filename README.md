@@ -5,7 +5,7 @@
 -----------------------------------------------------------------------------------
 
 
-#### The Project is hosted here in Glitch.com : https://talented-musician.glitch.me/
+#### The Project is hosted here in Glitch.com : https://steep-seeder.glitch.me
 
 -----------------------------------------------------------------------------------
 __Technologies used__:
