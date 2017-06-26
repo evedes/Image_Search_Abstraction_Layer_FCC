@@ -1,51 +1,25 @@
+// Requirements
 const express = require('express')
 const path = require('path')
-const router = express.Router()
-const getJSON = require('simple-get-json')
+const router = express.Router() // Express Router for routing
+const getJSON = require('simple-get-json') // getJSON NPM Package
 
+// Require lib.js
+const lib = require('../lib/lib.js') 
+
+//Load .env file from folder root
 const dotenv = require('dotenv')
 dotenv.load()
 
-//ATTRIB STATIC PATH TO PUBLIC FOLDER
+
+//Define static path for index.html
 router.use('/', express.static(path.join(__dirname,'../public')))
 
-router.get('/s/:query/offset=:n', (req,res)=>{
-    let results = []
-    let i = 0;
-    query = req.params.query
-    n = req.params.n
-    
-    url = 'https://pixabay.com/api/?key='+process.env.API_KEY+'&q='+ query +'&image_type=photo&page=' + n
 
-    getJSON(url, function(data){
-            
-            console.log(data.totalHits)
-            console.log(data.hits.length)
+// Routes definition
+router.route('/s/:query/offset=:n').get(lib.query)
+router.route('/imagesearch/').get(lib.imageSearch)
 
-            for (i = 0 ; i < data.hits.length ; i++) {
-            
-            results.push({
-                "Id": data.hits[i].id,
-                "Image Url": data.hits[i].webformatURL,
-                "Downloads": data.hits[i].downloads,
-            })
-            }
-    
-    
-
-
-    res.send(results)
-        
-})
-
-
-
-
-    
-  
-
-})
-
-
+//Module exports of the express.Router()
 module.exports = router
 
