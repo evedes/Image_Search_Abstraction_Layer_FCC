@@ -1,7 +1,7 @@
 // Express and other Requirements
 const express = require('express')
 const app = express()
-const port = process.env.PORT | 8080;
+const port = process.env.PORT || 8080;
 const route = require('./routes/routes.js')
 const mongoose = require('mongoose')
 // .env var definitions
